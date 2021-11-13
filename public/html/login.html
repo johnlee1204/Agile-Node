@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <style>
+        input {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<form id = 'form' action = "/login" method = "post">
+    <input name = "userName" placeholder="User Name" required><BR>
+    <input name = "password" type = "password" placeholder="Password" required><BR>
+    <input type = "submit">
+</form>
+<script>
+    const queryString = window.location.search;
+    const queryParams = new URLSearchParams(queryString);
+    if(queryParams.get('redirect')) {
+        document.getElementById("form").action = "/login?redirect=" + queryParams.get('redirect');
+    }
+</script>
+<a href = "./createAccount">Create Account</a>
+
+</body>
+</html>
