@@ -1,0 +1,23 @@
+table {
+    border-collapse: collapse;
+    table-layout:fixed;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td, th {
+    padding: 10px;
+}
+
+tbody {
+    display: block;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+thead {
+    display:table-header-group;
+}
+
