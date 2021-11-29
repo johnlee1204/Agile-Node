@@ -49,7 +49,7 @@ webSocketServer.on('connection', ws => {
 
 const connection = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
+    user: 'jlee',
     password: 'Echo120499!',
     database: 'Agile'
 });
@@ -66,7 +66,7 @@ app.use(cookieParser());
 app.use(logRequest);
 
 app.get("/", (request, response) => {
-    validateCookie(request, response, () => {
+    validateCookie(request, response, (userInformation) => {
         fileSystem.readFile(path.join(__dirname, "public", "html", "index.html"), (error, content) => {
             if(error) {
                 throw error;
@@ -92,7 +92,7 @@ app.get("/robots.txt", (request, response) => {
 });
 
 app.get("/about", (request, response) => {
-    validateCookie(request, response, () => {
+    validateCookie(request, response, (userInformation) => {
         fileSystem.readFile(path.join(__dirname, "public", "html", "about.html"), (error, content) => {
             if(error) {
                 throw error;
@@ -106,7 +106,7 @@ app.get("/about", (request, response) => {
 });
 
 app.get("/webSocket", (request, response) => {
-    validateCookie(request, response, () => {
+    validateCookie(request, response, (userInformation) => {
         fileSystem.readFile(path.join(__dirname, "public", "html", "webSocket.html"), (error, content) => {
             if(error) {
                 throw error;
@@ -120,7 +120,7 @@ app.get("/webSocket", (request, response) => {
 });
 
 app.get("/webSocket.js", (request, response) => {
-    validateCookie(request, response, () => {
+    validateCookie(request, response, (userInformation) => {
         fileSystem.readFile(path.join(__dirname, "public", "js", "webSocket.js"), (error, content) => {
             if(error) {
                 throw error;
@@ -134,7 +134,7 @@ app.get("/webSocket.js", (request, response) => {
 });
 
 app.get("/users", (request, response) => {
-    validateCookie(request, response, () => {
+    validateCookie(request, response, (userInformation) => {
         fileSystem.readFile(path.join(__dirname, "public", "html", "users.html"), (error, content) => {
             if(error) {
                 throw error;
@@ -148,7 +148,7 @@ app.get("/users", (request, response) => {
 });
 
 app.get("/users.js", (request, response) => {
-    validateCookie(request, response, () => {
+    validateCookie(request, response, (userInformation) => {
         fileSystem.readFile(path.join(__dirname, "public", "js", "users.js"), (error, content) => {
             if(error) {
                 throw error;
@@ -162,7 +162,7 @@ app.get("/users.js", (request, response) => {
 });
 
 app.get("/accessLog", (request, response) => {
-    validateCookie(request, response, () => {
+    validateCookie(request, response, (userInformation) => {
         fileSystem.readFile(path.join(__dirname, "public", "html", "accessLog.html"), (error, content) => {
             if(error) {
                 throw error;
@@ -176,7 +176,7 @@ app.get("/accessLog", (request, response) => {
 });
 
 app.get("/accessLog.js", (request, response) => {
-    validateCookie(request, response, () => {
+    validateCookie(request, response, (userInformation) => {
         fileSystem.readFile(path.join(__dirname, "public", "js", "accessLog.js"), (error, content) => {
             if(error) {
                 throw error;
@@ -190,7 +190,7 @@ app.get("/accessLog.js", (request, response) => {
 });
 
 app.get("/table.css", (request, response) => {
-    validateCookie(request, response, () => {
+    validateCookie(request, response, (userInformation) => {
         fileSystem.readFile(path.join(__dirname, "public", "css", "table.css"), (error, content) => {
             if(error) {
                 throw error;
@@ -204,7 +204,7 @@ app.get("/table.css", (request, response) => {
 });
 
 app.get("/form.css", (request, response) => {
-    validateCookie(request, response, () => {
+    validateCookie(request, response, (userInformation) => {
         fileSystem.readFile(path.join(__dirname, "public", "css", "form.css"), (error, content) => {
             if(error) {
                 throw error;
@@ -353,6 +353,71 @@ app.get("/public/images/404.jpg", (request, response) => {
     });
 });
 
+app.get("/gameRankings", (request, response) => {
+    validateCookie(request, response, (userInformation) => {
+        fileSystem.readFile(path.join(__dirname, "public", "html", "gameRankings.html"), (error, content) => {
+            if(error) {
+                throw error;
+            }
+
+            response.writeHead(200, "content-type:text:html");
+            response.write(content);
+            response.end();
+        });
+    });
+});
+
+app.post("/addGameRanking", (request, response) => {
+     validateCookie(request, response, (userInformation) => {
+         connection.query("DELETE FROM GameRanking WHERE userId = ? AND game = ?", [userInformation.userId, request.body.game], error => {
+            if(error) {
+                throw error;
+            }
+
+             connection.query("INSERT INTO GameRanking(date, userId, game, plot, gameplay, graphics, atmosphere) VALUES(current_timestamp(), ?, ?, ?, ?, ?, ?)", [
+                 userInformation.userId,
+                 request.body.game,
+                 request.body.plot,
+                 request.body.gameplay,
+                 request.body.graphics,
+                 request.body.atmosphere
+             ], error => {
+                 if(error) {
+                     throw error;
+                 }
+
+                 response.redirect('/gameRankings');
+             });
+         });
+     });
+});
+
+app.get("/gameRankings.js", (request, response) => {
+    validateCookie(request, response, (userInformation) => {
+        fileSystem.readFile(path.join(__dirname, "public", "js", "gameRankings.js"), (error, content) => {
+            if(error) {
+                throw error;
+            }
+
+            response.writeHead(200, "content-type:application/javascript");
+            response.write(content);
+            response.end();
+        });
+    });
+});
+
+app.get("/api/gameRankings", (request, response) => {
+    connection.query("SELECT CONCAT(firstName, ' ', lastName) name, game, plot, gameplay, graphics, atmosphere FROM GameRanking JOIN User ON User.userId = GameRanking.userId ORDER BY GameRanking.date DESC", [], (error, result) => {
+        if(error) {
+            throw error;
+        }
+
+        response.writeHead(200, "content-type:application/json");
+        response.write(JSON.stringify({success:true, data:result}));
+        response.end();
+    });
+});
+
 app.get("*", (request, response) => {
     fileSystem.readFile(path.join(__dirname, "public", "html", "404.html"), (error, content) => {
        if(error) {
@@ -384,7 +449,7 @@ function validateCookie(request, response, callback) {
             }
         });
 
-        callback.call();
+        callback(results[0]);
     })
 
     return true;
@@ -414,7 +479,7 @@ function logRequest (request, response, next) {
 
         let body = JSON.stringify(request.body);
 
-        if(request.url.toLowerCase() === "/login" && request.method === "POST") {
+        if((request.url.toLowerCase() === "/login" || request.url.toLowerCase() === "/api/user") && request.method === "POST") {
             body = "REDACTED";
         }
 
