@@ -34,10 +34,14 @@ socket.addEventListener('message', function (event) {
         let date = new Date(i.date);
         dateCell.innerText = date.toLocaleString();
 
+        let nameCell = document.createElement("td");
+        nameCell.innerText = i.name;
+
         messageCell = document.createElement("td");
         messageCell.innerText = i.message;
 
         row.appendChild(dateCell);
+        row.appendChild(nameCell);
         row.appendChild(messageCell);
         tableBody.appendChild(row);
     }
@@ -48,3 +52,9 @@ socket.addEventListener('message', function (event) {
 
     tableBody.scrollTo(0, tableBody.scrollHeight);
 });
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}

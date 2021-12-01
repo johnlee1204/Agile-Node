@@ -12,6 +12,6 @@
     <a href = "/">Home</a><BR><BR>
     <h1>Web Socket</h1>
     <label for="message">Message:</label><input id = "message" onkeypress="if(arguments[0].keyCode === 13) document.getElementById('send').click()">
-    <button style = 'margin-bottom: 20px' id = 'send' onclick="socket.send(document.getElementById('message').value);document.getElementById('message').value = ''"   >Send</button>
+    <button style = 'margin-bottom: 20px' id = 'send' onclick="socket.send(JSON.stringify({message:document.getElementById('message').value, session:getCookie('agile')}));document.getElementById('message').value = ''"   >Send</button>
 </body>
 </html>

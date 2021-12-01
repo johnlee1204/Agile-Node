@@ -9,7 +9,7 @@ module.exports = function(app, sharedFunctions){
 
     webSocketServer.on('connection', ws => {
         webSocketClients.push(ws);
-        sharedFunctions.connection.query("SELECT date, message FROM Chat ORDER BY date", [], (error, result) => {
+        sharedFunctions.connection.query("SELECT date, CONCAT(firstName, ' ', lastName) name, message FROM Chat JOIN User ON User.userId = Chat.userId ORDER BY date", [], (error, result) => {
             if(error) {
                 throw error;
             }
@@ -19,23 +19,40 @@ module.exports = function(app, sharedFunctions){
         ws.on('message', message => {
             message = message.toString();
 
-            if(message === "") {
+            message = JSON.parse(message);
+
+            if(message.message === "") {
                 return;
             }
 
-            sharedFunctions.connection.query("INSERT INTO Chat(date, message) VALUES(current_timestamp(), ?)", [message], error => {
+            sharedFunctions.connection.query("SELECT Session.userId FROM Session JOIN User ON User.userId = Session.userId WHERE token = ?", [message.session], (error, results) => {
                 if(error) {
                     throw error;
                 }
-                sharedFunctions.connection.query("SELECT date, message FROM Chat ORDER BY date", [], (error, result) => {
+
+                let userId = null;
+
+                if(results.length > 0) {
+                    userId = results[0].userId;
+                } else {
+                    return;
+                }
+
+                sharedFunctions.connection.query("INSERT INTO Chat(date, message, userId) VALUES(current_timestamp(), ?, ?)", [message.message, userId], error => {
                     if(error) {
                         throw error;
                     }
+                    sharedFunctions.connection.query("SELECT date, CONCAT(firstName, ' ', lastName) name, message FROM Chat JOIN User ON User.userId = Chat.userId ORDER BY date", [], (error, result) => {
+                        if(error) {
+                            throw error;
+                        }
 
-                    for(let client of webSocketClients) {
-                        client.send(JSON.stringify({success:true, data:result}));
-                    }
+                        for(let client of webSocketClients) {
+                            client.send(JSON.stringify({success:true, data:result}));
+                        }
+                    });
                 });
+
             });
         });
     });
