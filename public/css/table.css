@@ -14,6 +14,7 @@ td, th {
 tbody {
     display: block;
     height: 300px;
+    /*width: 500px;*/
     overflow-y: scroll;
 }
 
@@ -21,3 +22,7 @@ thead {
     display:table-header-group;
 }
 
+.messageCell {
+    word-wrap: break-word;
+    max-width: 300px;
+}

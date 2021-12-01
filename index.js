@@ -22,46 +22,7 @@ require(path.join(path.dirname(require.main.filename), "Routes", "logout.js"))(a
 require(path.join(path.dirname(require.main.filename), "Routes", "login.js"))(app, sharedFunctions);
 require(path.join(path.dirname(require.main.filename), "Routes", "user.js"))(app, sharedFunctions);
 require(path.join(path.dirname(require.main.filename), "Routes", "websocket.js"))(app, sharedFunctions);
-
-app.get("/", (request, response) => {
-    sharedFunctions.validateCookie(request, response, (userInformation) => {
-        fileSystem.readFile(path.join(path.dirname(require.main.filename), "public", "html", "index.html"), (error, content) => {
-            if(error) {
-                throw error;
-            }
-
-            response.writeHead(200, "content-type:text/html");
-            response.write(content);
-            response.end();
-        });
-    });
-});
-
-app.get("/about", (request, response) => {
-    sharedFunctions.validateCookie(request, response, (userInformation) => {
-        fileSystem.readFile(path.join(path.dirname(require.main.filename), "public", "html", "about.html"), (error, content) => {
-            if(error) {
-                throw error;
-            }
-
-            response.writeHead(200, "content-type:text/html");
-            response.write(content);
-            response.end();
-        });
-    });
-});
-
-app.get("*", (request, response) => {
-    fileSystem.readFile(path.join(path.dirname(require.main.filename), "public", "html", "404.html"), (error, content) => {
-       if(error) {
-           throw error;
-       }
-
-       response.writeHead(404, "content-type:text/html");
-       response.write(content);
-       response.end();
-    });
-});
+require(path.join(path.dirname(require.main.filename), "Routes", "main.js"))(app, sharedFunctions);//Must be last for 404 catch!!!
 
 app.listen(5000);
 
