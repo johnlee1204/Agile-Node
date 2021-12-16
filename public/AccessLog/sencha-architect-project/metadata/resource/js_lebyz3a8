@@ -1,0 +1,20 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js_lebyz3a8",
+        "includeInBundle": true,
+        "url": "/inc/js/AppWindowManager.js"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "includeInBundle": "boolean",
+        "url": "uri"
+    },
+    "name": "js2",
+    "designerId": "1dbd3c0d-5d1c-4cd8-86d0-2cbe0fd92178"
+}

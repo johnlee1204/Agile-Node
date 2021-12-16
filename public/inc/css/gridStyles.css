@@ -1,0 +1,230 @@
+/*
+	Selected colors are 10% darker
+	Hover colors are 5% darker
+	Alt Colors are 5% lighter
+	used http://www.hexcolortool.com
+*/
+
+/*
+	GREEN ROW
+*/
+tr.row-green {
+	background-color:#d3FFd3;
+}
+
+.x-grid-item-alt tr.row-green{
+	background-color:#E0FFE0;
+}
+
+.x-grid-item-over tr.row-green{
+	background-color:#C6F2C6;
+}
+
+.x-grid-item-selected tr.row-green{
+	background-color:#BAE6BA;
+}
+
+/*
+	BRIGHT RED ROW
+ */
+tr.row-bright-red {
+	background-color:#ff8484;
+}
+
+.x-grid-item-alt tr.row-bright-red{
+	background-color:#ff6363;
+}
+
+.x-grid-item-over tr.row-bright-red{
+	background-color:#ff8989;
+}
+
+.x-grid-item-selected tr.row-bright-red{
+	background-color:#f17f7f;
+}
+
+/*
+	RED ROW
+*/
+tr.row-red {
+	background-color:#FFd3d3;
+}
+
+.x-grid-item-alt tr.row-red{
+	background-color:#FFE0E0;
+}
+
+.x-grid-item-over tr.row-red{
+	background-color:#F2C6C6;
+}
+
+.x-grid-item-selected tr.row-red{
+	background-color:#E6BABA;
+}
+
+/*
+	PURPLE ROW
+*/
+tr.row-purple {
+	background-color:#D1C4E9;
+}
+
+.x-grid-item-alt tr.row-purple{
+	background-color:#DED1F6;
+}
+
+.x-grid-item-over tr.row-purple{
+	background-color:#C4B7DC;
+}
+
+.x-grid-item-selected tr.row-purple{
+	background-color:#B8ABD0;
+}
+
+/*
+	BLUE ROW
+ */
+tr.row-blue {
+	background-color:#A9C0DD;
+}
+
+.x-grid-item-alt tr.row-blue{
+	background-color:#B6CDEA;
+}
+
+.x-grid-item-over tr.row-blue{
+	background-color:#9CB3D0;
+}
+
+.x-grid-item-selected tr.row-blue{
+	background-color:#90A7C4;
+}
+
+/*
+	YELLOW ROW
+ */
+tr.row-yellow {
+	background-color:#FFF176;
+}
+
+.x-grid-item-alt tr.row-yellow{
+	background-color:#FFFE83;
+}
+
+.x-grid-item-over tr.row-yellow{
+	background-color:#F2E469;
+}
+
+.x-grid-item-selected tr.row-yellow{
+	background-color:#E6D85D;
+}
+
+
+/*
+	PINK ROW
+ */
+tr.row-pink {
+	background-color:#ffbdf6;
+}
+
+.x-grid-item-alt tr.row-pink{
+	background-color:#FFCAFF;
+}
+
+.x-grid-item-over tr.row-pink{
+	background-color:#F2B0E9;
+}
+
+.x-grid-item-selected tr.row-pink{
+	background-color:#E6A4DD;
+}
+
+/*
+	BRIGHT RED CELL
+*/
+td.cell-bright-red{
+	background-color:#ff8484;
+}
+.x-grid-item-over td.cell-bright-red{
+	background-color:#ff8989;
+}
+
+.x-grid-item-selected td.cell-bright-red{
+	background-color:#f17f7f;
+}
+
+/*
+	RED CELL
+*/
+td.cell-red{
+	background-color:#FFd3d3;
+}
+
+.x-grid-item-over td.cell-red{
+	background-color:#F2C6C6;
+}
+
+.x-grid-item-selected td.cell-red{
+	background-color:#E6BABA;
+}
+
+
+/*
+	ORANGE CELL
+*/
+td.cell-orange{
+	background-color:#FFCC80;
+}
+
+.x-grid-item-over td.cell-orange{
+	background-color:#FFB74D;
+}
+
+.x-grid-item-selected td.cell-orange{
+	background-color:#FFB74D;
+}
+
+/*
+	YELLOW CELL
+*/
+td.cell-yellow{
+	background-color:#FFF176;
+}
+
+.x-grid-item-over td.cell-yellow{
+	background-color:#F2E469;
+}
+
+.x-grid-item-selected td.cell-yellow{
+	background-color:#E6D85D;
+}
+
+/*
+	GREEN CELL
+*/
+td.cell-green{
+	background-color:#d3FFd3;
+}
+
+.x-grid-item-over td.cell-green{
+	background-color:#C6F2C6;
+}
+
+.x-grid-item-selected td.cell-green{
+	background-color:#BAE6BA;
+}
+
+/*
+	Purple CELL
+*/
+td.cell-purple{
+	background-color:#D1C4E9;
+}
+
+.x-grid-item-over td.cell-purple{
+	background-color:#C4B7DC;
+}
+
+.x-grid-item-selected td.cell-purple{
+	background-color:#B8ABD0;
+}

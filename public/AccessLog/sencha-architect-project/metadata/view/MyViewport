@@ -1,0 +1,69 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|initialView": true,
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport",
+        "layout": "vbox",
+        "margin": null
+    },
+    "configAlternates": {
+        "scrollable": "boolean",
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "margin": "auto",
+        "padding": "auto",
+        "width": "auto",
+        "layout": "string",
+        "container|align": "string"
+    },
+    "name": "MyViewport",
+    "designerId": "79f3f913-02f7-4a07-8ef4-c3f24245093b",
+    "viewControllerInstanceId": "9f9c802f-7311-4f1e-8bd1-2b212c501096",
+    "viewModelInstanceId": "0202bb2a-4780-44c2-a06f-4de52c206d34",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "layout": "fit",
+                "padding": 20,
+                "scrollable": true
+            },
+            "configAlternates": {
+                "scrollable": "auto",
+                "padding": "auto",
+                "layout": "string",
+                "flex": "number"
+            },
+            "name": "MyContainer",
+            "designerId": "71d3049e-c206-468b-b191-3677c9fd540d",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "AccessLog",
+                    "designerId": "38b67402-0ac9-4d82-ae03-004462aad200",
+                    "masterInstanceId": "d38c2cf0-9e53-498a-8521-da773f47156a"
+                }
+            ]
+        }
+    ]
+}

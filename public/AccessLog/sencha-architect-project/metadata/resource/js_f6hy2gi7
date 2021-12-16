@@ -1,0 +1,20 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js_f6hy2gi7",
+        "includeInBundle": true,
+        "url": "/inc/js/fileDrop/fileDropper.js"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "includeInBundle": "boolean",
+        "url": "uri"
+    },
+    "name": "js2",
+    "designerId": "40e1fc54-dc2c-477a-9667-8688a4e3389a"
+}

@@ -1,0 +1,20 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defer": false,
+        "designer|userClassName": "js_22nvu4io",
+        "url": "/inc/js/AERP/Ajax.js"
+    },
+    "configAlternates": {
+        "defer": "boolean",
+        "designer|userClassName": "string",
+        "url": "uri"
+    },
+    "name": "js",
+    "designerId": "44b5bcd2-b3c3-4c22-b66e-6ea84a8d7455"
+}

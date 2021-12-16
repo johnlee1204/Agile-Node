@@ -1,0 +1,19 @@
+.fileDropIndicator{
+	color: white;
+	margin: auto !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	bottom: 0 !important;
+	right: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	text-align:center !important;
+	background:rgba(33,150,243,0.8) !important;
+	z-index:100000;
+	display:none;
+}
+
+.fileDraggedOver .fileDropIndicator{
+	display: inherit;
+}

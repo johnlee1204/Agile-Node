@@ -1,0 +1,244 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userAlias": "accesslog",
+        "designer|userClassName": "AccessLog",
+        "frame": true,
+        "layout": "vbox",
+        "minHeight": 500,
+        "minWidth": 500,
+        "title": "Access Log"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "height": "auto",
+        "title": "string",
+        "width": "auto",
+        "minHeight": "number",
+        "minWidth": "number",
+        "container|align": "string",
+        "layout": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "d38c2cf0-9e53-498a-8521-da773f47156a",
+    "viewControllerInstanceId": "8e77139f-bc05-4a61-ab7b-54ee0eb6e2c6",
+    "viewModelInstanceId": "f565af02-a06d-4dc3-95d1-9c4c266bfbf2",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1,
+                "store": [
+                    "{AccessLogStore}"
+                ]
+            },
+            "configAlternates": {
+                "store": "binding",
+                "flex": "number"
+            },
+            "name": "MyGridPanel",
+            "designerId": "f7151b59-6064-4a0d-91cb-80ae0c5575e3",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "date",
+                        "format": "n/j/Y h:ia",
+                        "text": "Date",
+                        "width": 159
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "format": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyDateColumn",
+                    "designerId": "6e19e0b7-33c2-4a99-9c9a-7e72dc2a12d2"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "userName",
+                        "text": "User Name"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn",
+                    "designerId": "4997a588-4eaa-4268-970e-c3e38f2f5c7b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "name",
+                        "text": "Name"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "6bf93305-e4b9-4ec9-88aa-906e6b3509d0"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "url",
+                        "text": "Url",
+                        "width": 241
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn2",
+                    "designerId": "7940298a-2fc3-4a9c-9206-cb503fff1647"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "query",
+                        "text": "Query",
+                        "width": 205
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn1",
+                    "designerId": "66ccbefd-5f50-4123-992f-e1867cf3aeea"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "body",
+                        "text": "Body",
+                        "width": 214
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn4",
+                    "designerId": "5c3388ee-b65c-4cba-a25f-fd9ad6bda3b9"
+                },
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "enableTextSelection": true
+                    },
+                    "configAlternates": {
+                        "enableTextSelection": "boolean"
+                    },
+                    "name": "MyTable",
+                    "designerId": "76c74f18-66ca-473c-b62d-d4096cabd15e"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "this.runReport();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "ca2bfc34-2cce-4d30-bc55-6d16e8baa3be"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "runReport",
+                "implHandler": [
+                    "AERP.Ajax.request({",
+                    "\turl:\"/api/accessLog\",",
+                    "\tmethod:\"GET\",",
+                    "\tsuccess:function(reply) {",
+                    "\t\tthis.getViewModel().getStore(\"AccessLogStore\").loadData(reply.data);",
+                    "\t},",
+                    "\tscope:this,",
+                    "\tmask:this",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "runReport",
+            "designerId": "5ebbbc49-8626-4e97-b149-d7126ca018cb"
+        }
+    ]
+}

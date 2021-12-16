@@ -1,0 +1,135 @@
+a.x-tab {
+	height:30px;
+    margin-left:3px;
+    margin-right:3px;
+    margin-top:3px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+/*
+	Color Pattern
+	 - choose color from: https://material.google.com/style/color.html#color-color-palette
+	 - Border is 100
+	 - Top gradient is 200
+	 - Bottom gradient is 300
+	 - Active, gradient is 300 to 400
+
+	 add style class to button cls of tab.
+ */
+
+
+/*
+	-- GREEN TAB --
+*/
+
+a.x-tab.greenTab {
+	background-image: -webkit-linear-gradient( #A5D6A7, #81C784);
+	background-image: -moz-linear-gradient( #A5D6A7, #81C784);
+	background-image: -o-linear-gradient( #A5D6A7, #81C784);
+	background-image: linear-gradient( #A5D6A7, #81C784);
+	border-color: #C8E6C9;
+}
+a.x-tab.x-tab-active.greenTab {
+	background-image: -webkit-linear-gradient( #81C784, #66BB6A);
+	background-image: -moz-linear-gradient( #81C784, #66BB6A);
+	background-image: -o-linear-gradient( #81C784, #66BB6A);
+	background-image: linear-gradient( #81C784, #66BB6A);
+	border-color: #C8E6C9;
+}
+
+a.x-tab.greenTab span.x-tab-inner, a.x-tab.x-tab-active.greenTab span.x-tab-inner{
+	color: #333;
+}
+
+/*
+	-- RED TAB --
+*/
+
+a.x-tab.redTab {
+	background-image: -webkit-linear-gradient( #EF9A9A, #E57373);
+	background-image: -moz-linear-gradient( #EF9A9A, #E57373);
+	background-image: -o-linear-gradient( #EF9A9A, #E57373);
+	background-image: linear-gradient( #EF9A9A, #E57373);
+	border-color: #FFCDD2;
+}
+a.x-tab.x-tab-active.redTab {
+	background-image: -webkit-linear-gradient( #E57373, #EF5350);
+	background-image: -moz-linear-gradient( #E57373, #EF5350);
+	background-image: -o-linear-gradient( #E57373, #EF5350);
+	background-image: linear-gradient( #E57373, #EF5350);
+	border-color: #FFCDD2;
+}
+
+a.x-tab.redTab span.x-tab-inner, a.x-tab.x-tab-active.redTab span.x-tab-inner{
+	color: #333;
+}
+
+/*
+	-- BLUE TAB --
+*/
+
+a.x-tab.blueTab {
+	background-image: -webkit-linear-gradient( #90CAF9, #64B5F6);
+	background-image: -moz-linear-gradient( #90CAF9, #64B5F6);
+	background-image: -o-linear-gradient( #90CAF9, #64B5F6);
+	background-image: linear-gradient( #90CAF9, #64B5F6);
+	border-color: #BBDEFB;
+}
+a.x-tab.x-tab-active.blueTab {
+	background-image: -webkit-linear-gradient( #64B5F6, #42A5F5);
+	background-image: -moz-linear-gradient( #64B5F6, #42A5F5);
+	background-image: -o-linear-gradient( #64B5F6, #42A5F5);
+	background-image: linear-gradient( #64B5F6, #42A5F5);
+	border-color: #BBDEFB;
+}
+
+a.x-tab.blueTab span.x-tab-inner, a.x-tab.x-tab-active.blueTab span.x-tab-inner{
+	color: #333;
+}
+
+/*
+	-- ORANGE TAB --
+*/
+
+a.x-tab.orangeTab {
+	background-image: -webkit-linear-gradient( #FFCC80, #FFB74D);
+	background-image: -moz-linear-gradient( #FFCC80, #FFB74D);
+	background-image: -o-linear-gradient( #FFCC80, #FFB74D);
+	background-image: linear-gradient( #FFCC80, #FFB74D);
+	border-color: #FFE0B2;
+}
+a.x-tab.x-tab-active.orangeTab {
+	background-image: -webkit-linear-gradient( #FFB74D, #FFA726);
+	background-image: -moz-linear-gradient( #FFB74D, #FFA726);
+	background-image: -o-linear-gradient( #FFB74D, #FFA726);
+	background-image: linear-gradient( #FFB74D, #FFA726);
+	border-color: #FFE0B2;
+}
+
+a.x-tab.orangeTab span.x-tab-inner, a.x-tab.x-tab-active.orangeTab span.x-tab-inner{
+	color: #333;
+}
+
+/*
+	-- BROWN TAB --
+*/
+
+a.x-tab.brownTab {
+	background-image: -webkit-linear-gradient( #BCAAA4, #A1887F);
+	background-image: -moz-linear-gradient( #BCAAA4, #A1887F);
+	background-image: -o-linear-gradient( #BCAAA4, #A1887F);
+	background-image: linear-gradient( #BCAAA4, #A1887F);
+	border-color: #D7CCC8;
+}
+a.x-tab.x-tab-active.brownTab {
+	background-image: -webkit-linear-gradient( #A1887F, #8D6E63);
+	background-image: -moz-linear-gradient( #A1887F, #8D6E63);
+	background-image: -o-linear-gradient( #A1887F, #8D6E63);
+	background-image: linear-gradient( #A1887F, #8D6E63);
+	border-color: #D7CCC8;
+}
+
+a.x-tab.brownTab span.x-tab-inner, a.x-tab.x-tab-active.brownTab span.x-tab-inner{
+	color: #333;
+}

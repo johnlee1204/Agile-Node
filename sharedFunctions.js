@@ -56,7 +56,7 @@ module.exports = {
                 body = "REDACTED";
             }
 
-            connection.query("INSERT INTO LogAccess(date, userId, userName, url,`query`, `body`) VALUES (current_timestamp(), ?, ?, ?, ?, ?)", [userId, userName, request.url, JSON.stringify(request.query), body], error => {
+            connection.query("INSERT INTO LogAccess(date, userId, userName, url,`query`, `body`, `method`) VALUES (current_timestamp(), ?, ?, ?, ?, ?, ?)", [userId, userName, request.url, JSON.stringify(request.query), body, request.method], error => {
                 if(error) {
                     throw error;
                 }

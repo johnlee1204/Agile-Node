@@ -1,0 +1,20 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defer": false,
+        "designer|userClassName": "js_7yye1qdf",
+        "url": "/inc/js/docForm/docForm.js"
+    },
+    "configAlternates": {
+        "defer": "boolean",
+        "designer|userClassName": "string",
+        "url": "uri"
+    },
+    "name": "js",
+    "designerId": "b93c98a7-a0df-46e7-ad43-dc724ce6e833"
+}

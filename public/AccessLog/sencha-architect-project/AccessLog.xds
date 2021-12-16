@@ -1,0 +1,65 @@
+{
+    "name": "AccessLog",
+    "settings": {
+        "cmd": {
+            "license": "",
+            "cmdVersion": "",
+            "frameworkVersion": ""
+        },
+        "urlPrefixTemplate": "http://dev.local/",
+        "exportPath": "C:/Users/jlee/Documents/Programming/Node.js/Agile-Node/public/AccessLog",
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": false,
+        "spacesToIndent": "tab",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "sdkPath": "",
+        "urlPrefix": "http://dev.local/"
+    },
+    "xdsVersion": "4.2.9",
+    "xdsBuild": 443,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext73",
+    "viewOrderMap": {
+        "view": [
+            "79f3f913-02f7-4a07-8ef4-c3f24245093b",
+            "0202bb2a-4780-44c2-a06f-4de52c206d34",
+            "9f9c802f-7311-4f1e-8bd1-2b212c501096",
+            "d38c2cf0-9e53-498a-8521-da773f47156a",
+            "f565af02-a06d-4dc3-95d1-9c4c266bfbf2",
+            "8e77139f-bc05-4a61-ab7b-54ee0eb6e2c6"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "184c3144-a7a2-4709-b6f6-0df39a595c52",
+            "173a740e-293e-4e00-b40c-9a50fb2577d4",
+            "829eccee-752f-426d-b947-ea1e09689abb",
+            "5ba3958c-da75-475c-be62-0204422d23cf",
+            "e9dfff16-f6c8-498c-ac8a-f008ed4717e3",
+            "9aedfc58-92ea-40fc-ab2c-d367a700d152",
+            "b93c98a7-a0df-46e7-ad43-dc724ce6e833",
+            "44b5bcd2-b3c3-4c22-b66e-6ea84a8d7455",
+            "1d6673bb-a3a3-4208-8f47-7a811036c3b8",
+            "1dbd3c0d-5d1c-4cd8-86d0-2cbe0fd92178",
+            "40e1fc54-dc2c-477a-9667-8688a4e3389a",
+            "6d3863bd-00b5-4ae1-a676-10327db4a8d1",
+            "d94af485-d9b9-41ab-b418-64b8a3917c66"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

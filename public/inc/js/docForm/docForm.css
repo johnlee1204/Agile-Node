@@ -1,0 +1,58 @@
+.docFormReadOnly .x-form-field:not(.x-form-checkbox):not(.x-form-radio){
+    background: #DADADA;
+}
+
+.docFormSearchable .x-form-field:not(.x-form-checkbox):not(.x-form-radio){
+    background: #BFFCF7;
+}
+
+.docFormChanged .x-form-field:not(.x-form-checkbox):not(.x-form-radio){
+    background: #FBFCBF;
+}
+
+.docFormChanged .x-form-checkbox{
+    background-image:url(checkbox-changed.gif);
+}
+
+.docFormSearchable .x-form-checkbox{
+    background-image:url(checkbox-searchable.gif);
+}
+
+.docFormReadOnly .x-form-checkbox{
+    background-image:url(checkbox-readOnly.gif);
+}
+
+.docFormChanged .x-form-radio{
+    background-image:url(radio-changed.gif);
+}
+
+.docFormReadOnly .x-form-radio{
+    background-image:url(radio-readOnly.gif);
+}
+
+.docFormStatusLabel img{
+    vertical-align: text-bottom;
+}
+
+.docform-link-indicator {
+    visibility:hidden;
+    position:absolute;
+    top:3px;
+    right:4px;
+    opacity: .75;
+    cursor:pointer;
+}
+div.docform-link-container:hover .docform-link-indicator{
+    visibility:visible;
+    display:block;
+}
+
+.docform-field-required-container {
+    position:absolute;
+    top:0px;
+    bottom: 0px;
+    right:0px;
+    left:0px;
+    border: thin solid red;
+    pointer-events:none;
+}

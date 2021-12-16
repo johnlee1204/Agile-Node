@@ -1,0 +1,22 @@
+.historyTable{
+	border-collapse:collapse;
+	background:white;
+}
+
+.historyTable th{
+	text-align:left;
+}
+
+.historyTable tr:nth-child(even) {
+   background-color: #dcdcdc;
+}
+
+.historyField{
+	width:120px;
+}
+.historyBefore{
+	width:200px;
+}
+.historyAfter{
+	width:200px;
+}

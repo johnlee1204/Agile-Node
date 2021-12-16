@@ -2,22 +2,8 @@ const fileSystem = require("fs");
 const path = require("path");
 
 module.exports = function(app, sharedFunctions){
-    app.get("/accessLog", (request, response) => {
-        sharedFunctions.validateCookie(request, response, (userInformation) => {
-            fileSystem.readFile(path.join(path.dirname(require.main.filename), "public", "html", "accessLog.html"), (error, content) => {
-                if(error) {
-                    throw error;
-                }
-
-                response.writeHead(200, "content-type:text/html");
-                response.write(content);
-                response.end();
-            });
-        });
-    });
-
     app.get("/api/accessLog", (request, response) => {
-        sharedFunctions.connection.query("SELECT LogAccess.date, LogAccess.userName, User.firstName, User.lastName, LogAccess.url, LogAccess.query, LogAccess.body FROM LogAccess LEFT JOIN User ON User.userId = LogAccess.userId ORDER BY LogAccess.date DESC", [], (error, result) => {
+        sharedFunctions.connection.query("SELECT DATE_FORMAT(LogAccess.date, '%Y-%m-%d %H:%i:%s') date, LogAccess.userName, CONCAT(User.firstName,' ', User.lastName) name, LogAccess.url, LogAccess.query, LogAccess.body FROM LogAccess LEFT JOIN User ON User.userId = LogAccess.userId ORDER BY LogAccess.date DESC", [], (error, result) => {
             if(error) {
                 throw error;
             }
